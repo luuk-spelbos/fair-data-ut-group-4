@@ -1,12 +1,31 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.semanticweb.org/xantilizanzu/ontologies/2025/9/untitled-ontology-4/"
      xml:base="http://www.semanticweb.org/xantilizanzu/ontologies/2025/9/untitled-ontology-4/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sio="http://semanticscience.org/resource/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont"/>
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:mondo="http://purl.obolibrary.org/obo/mondo#"
+     xmlns:sssom="https://w3id.org/sssom/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:vocab="https://w3id.org/semapv/vocab/"
+     xmlns:schema="http://schema.org/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/mondo/releases/2025-10-07/mondo.owl"/>
+        <owl:imports rdf:resource="http://semanticscience.org/ontology/sio/v1.59/sio-release.owl"/>
+    </owl:Ontology>
     
 
 
@@ -51,7 +70,7 @@
     <!-- http://purl.obolibrary.org/obo/RO_0000086#hasQuality -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086#hasQuality">
-        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000498#Person"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/GO_0030431#Sleep"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125#Mass"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241#Length"/>
@@ -64,7 +83,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002327#has">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000498#Person"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
         <rdfs:range rdf:resource="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#DiseaseHistory"/>
     </owl:ObjectProperty>
     
@@ -81,7 +100,7 @@
     <!-- https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#hasAgeCategory -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#hasAgeCategory">
-        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000498#Person"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
         <rdfs:range rdf:resource="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#AgeCategory"/>
     </owl:ObjectProperty>
     
@@ -118,9 +137,11 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000051#Disease -->
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdfs:label>Disease</rdfs:label>
+    </owl:Class>
     
 
 
@@ -135,7 +156,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0002050#DepressiveDisorder -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002050#DepressiveDisorder">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -143,7 +164,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0002898#SkinCancer -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0002898#SkinCancer">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -151,7 +172,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0004979#Asthma -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0004979#Asthma">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -159,7 +180,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0005002#COPB -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005002#COPB">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -167,7 +188,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0005015#Diabetes -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005015#Diabetes">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -175,7 +196,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0005068#HeartAttack -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005068#HeartAttack">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -183,7 +204,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0005098#Stroke -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005098#Stroke">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -191,7 +212,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0005240#KidneyDisease -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005240#KidneyDisease">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -199,7 +220,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0005578#Arthritis -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0005578#Arthritis">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -207,7 +228,7 @@
     <!-- http://purl.obolibrary.org/obo/MONDO_0006021#Angina -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MONDO_0006021#Angina">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051#Disease"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
     </owl:Class>
     
 
@@ -246,9 +267,9 @@
     
 
 
-    <!-- http://semanticscience.org/resource/SIO_000498#Person -->
+    <!-- http://semanticscience.org/resource/SIO_000498 -->
 
-    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000498#Person"/>
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000498"/>
     
 
 
@@ -403,9 +424,9 @@
     
 
 
-    <!-- https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#75-59 -->
+    <!-- https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#75-79 -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#75-59">
+    <owl:NamedIndividual rdf:about="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#75-79">
         <rdf:type rdf:resource="https://w3id.org/FAIR-course-UT/2025-2026/group4/ont#AgeCategory"/>
     </owl:NamedIndividual>
     
