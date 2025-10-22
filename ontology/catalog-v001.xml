@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="http://purl.obolibrary.org/obo/bfo.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/pato/releases/2025-05-14/pato.owl" uri="http://purl.obolibrary.org/obo/pato.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/mondo/releases/2025-10-07/mondo.owl" uri="http://purl.obolibrary.org/obo/mondo.owl"/>
     <uri id="Imports Wizard Entry" name="http://semanticscience.org/ontology/sio/v1.59/sio-release.owl" uri="http://semanticscience.org/ontology/sio.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
