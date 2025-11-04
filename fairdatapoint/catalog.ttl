@@ -1,0 +1,62 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dcite: <http://purl.org/spar/datacite/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix language: <http://id.loc.gov/vocabulary/iso639-1/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix sio: <http://semanticscience.org/resource/>.
+@prefix wd: <https://www.wikidata.org/wiki/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix d: <http://localhost:8080/dataset/>.
+@prefix n0: <http://localhost:8080/dataset/11274e0f-764a-4966-9cda-faa9d54dfdb5#>.
+@prefix pro: <http://localhost:8080/profile/>.
+@prefix c: <http://localhost:8080/catalog/>.
+@prefix www: <https://www.usa.gov/>.
+@prefix met: <http://localhost:8080/dataset/11274e0f-764a-4966-9cda-faa9d54dfdb5/metrics/>.
+@prefix dis: <http://localhost:8080/distribution/>.
+@prefix fdp: <https://w3id.org/fdp/fdp-o#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+
+d:11274e0f-764a-4966-9cda-faa9d54dfdb5
+    a dcat:Dataset, dcat:Resource;
+    dct:accessRights n0:accessRights;
+    dct:conformsTo pro:2f08228e-1789-40f8-84cd-28e3288c3604;
+    dct:isPartOf c:eec9b56f-4efe-4ee1-84f5-fa69dd5a4f26;
+    dct:issued "2022-12-30T23:00:00Z"^^xsd:dateTime;
+    dct:language language:en;
+    dct:license www:government-copyright;
+    dct:publisher
+    [ a foaf:Agent; foaf:name "Centers for Disease Control and Prevention" ];
+    dct:title "Behavioral Risk Factor Surveillance System 2022";
+    sio:SIO_000628
+    met:445c0a70d1e214e545b261559e2842f4, met:5d27e854a9e78eb3f663331cd47cdc13;
+    rdfs:label "Behavioral Risk Factor Surveillance System 2022";
+    dcat:distribution
+        dis:08ccb16f-782e-4b04-ba56-cabcc3bfe9cd,
+        dis:ac54bac6-ea05-4a86-8fdf-5b166a75527a;
+    dcat:theme wd:Q12147;
+    dcat:version "2022";
+    fdp:metadataIdentifier n0:identifier;
+    fdp:metadataIssued "2025-11-04T18:59:00.224051801Z"^^xsd:dateTime;
+    fdp:metadataModified "2025-11-04T19:03:47.466591154Z"^^xsd:dateTime.
+met:445c0a70d1e214e545b261559e2842f4
+    sio:SIO_000332 <https://www.ietf.org/rfc/rfc3986.txt>;
+    sio:SIO_000628 <https://www.ietf.org/rfc/rfc3986.txt>.
+met:5d27e854a9e78eb3f663331cd47cdc13
+sio:SIO_000332 wd:Q8777; sio:SIO_000628 wd:Q8777.
+n0:accessRights
+    a dct:RightsStatement;
+    dct:description "This resource has no access restriction".
+n0:identifier
+    a dcite:Identifier;
+    dct:identifier
+    "http://localhost:8080/dataset/11274e0f-764a-4966-9cda-faa9d54dfdb5".
+dis:
+    a ldp:DirectContainer;
+    dct:title "Distributions";
+    ldp:contains
+        dis:08ccb16f-782e-4b04-ba56-cabcc3bfe9cd,
+        dis:ac54bac6-ea05-4a86-8fdf-5b166a75527a;
+    ldp:hasMemberRelation dcat:distribution;
+    ldp:membershipResource d:11274e0f-764a-4966-9cda-faa9d54dfdb5.
+pro:2f08228e-1789-40f8-84cd-28e3288c3604 rdfs:label "Dataset Profile".
