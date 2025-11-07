@@ -80,21 +80,25 @@
     sh:path dct:format ; sh:datatype xsd:string ; sh:minCount 1
   ] ;
   sh:property [
+    sh:path dct:source ; sh:nodeKind sh:IRI ; sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path prov:wasDerivedFrom ; sh:nodeKind sh:IRI ; sh:minCount 1
+  ] ;
+  sh:property [
     sh:path dct:license ; sh:nodeKind sh:IRI ; sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path dct:publisher ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] ) ;
+    sh:minCount 1
   ] .
 
 ########################################
 # Kaggle Distribution extends base
 ########################################
 :KaggleDistributionShape a sh:NodeShape ;
-  sh:node :DistributionShape ;
-  sh:property [
-    sh:path prov:wasDerivedFrom ; sh:nodeKind sh:IRI ; sh:minCount 1
-  ] ;
-  sh:property [
-    sh:path dct:publisher ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] )
-  ] .
+  sh:node :DistributionShape .
 
 ########################################
 # RDF Distribution extends base
@@ -108,15 +112,12 @@
     sh:path dct:issued ; sh:datatype xsd:date ; sh:minCount 1
   ] ;
   sh:property [
-    sh:path dct:source ; sh:nodeKind sh:IRI ; sh:minCount 1
-  ] ;
-  sh:property [
-    sh:path dct:creator ;
-    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] ) ;
+    sh:path dcat:downloadURL ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 1
   ] ;
   sh:property [
-    sh:path dcat:downloadURL ;
-    sh:nodeKind sh:IRI ;
+    sh:path dct:publisher ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] ) ;
     sh:minCount 1
   ] .
