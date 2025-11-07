@@ -1,0 +1,49 @@
+@prefix ex:   <https://example.org/dataset/> .
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+##########################################################
+# DCAT Dataset metadata – BRFSS 2022 (Heart Disease)
+##########################################################
+ex:heart-disease-2022 a dcat:Dataset ;
+  dct:title "Personal Key Indicators of Heart Disease 2022" ;
+  dct:description "Dataset from the 2022 CDC Behavioral Risk Factor Surveillance System (BRFSS), containing key health indicators related to heart disease." ;
+  dct:creator "Centers for Disease Control and Prevention (CDC)" ;
+  dct:publisher "Centers for Disease Control and Prevention (CDC)" ;
+  dct:issued "2022-12-31"^^xsd:date ;
+  dct:license <https://www.usa.gov/government-copyright> ;
+  dct:language <http://lexvo.org/id/iso639-1/en> ;
+  dct:spatial <https://www.wikidata.org/entity/Q30> ;  # United States
+  dcat:accessURL <https://www.cdc.gov/brfss/annual_data/annual_2022.html> ;
+  dcat:distribution ex:heart-disease-2022-kaggle , ex:heart-disease-2022-rdf .
+
+##############################################################
+# Distribution 1: Kaggle dataset (CSV)
+##############################################################
+ex:heart-disease-2022-kaggle a dcat:Distribution ;
+  dct:title "Heart Disease Indicators 2022 (CSV, Kaggle distribution)" ;
+  dct:description "Kaggle-hosted dataset containing a selection of 40 variables from the original 2022 CDC BRFSS dataset, focused on key indicators related to heart disease." ;
+  dcat:accessURL <https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease> ;
+  dcat:mediaType "text/csv" ;
+  dct:format "CSV" ;
+  dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:publisher "Kaggle user: Kamil Pytlak" ;
+  prov:wasDerivedFrom <https://www.cdc.gov/brfss/annual_data/annual_2022.html> .
+
+###########################################################
+# Distribution 2: RDF (FAIRified)
+###########################################################
+ex:heart-disease-2022-rdf a dcat:Distribution ;
+  dct:title "Heart Disease Indicators 2022 (FAIRified RDF version)" ;
+  dct:description "Reduced FAIRified dataset with 15 variables, based on Kaggle dataset, but with only the first 5% of people from every state. Focused on key indicators related to heart disease." ;
+  dcat:accessURL <https://github.com/luuk-spelbos/fair-data-ut-group-4/> ;
+  dcat:mediaType "text/turtle" ;
+  dct:format "Turtle" ;
+  dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  dct:conformsTo <https://www.w3.org/TR/vocab-dcat-3/> ;
+  dct:issued "2025-10-15"^^xsd:date ;
+  dct:source <https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease> ;
+  dcat:downloadURL <https://raw.githubusercontent.com/luuk-spelbos/fair-data-ut-group-4/main/data/rdf_data_set.ttl> ; 
+  dct:creator "Group 4, FAIR Data UT 2025" .

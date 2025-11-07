@@ -10,10 +10,14 @@
 :DatasetShape a sh:NodeShape ;
   sh:targetClass dcat:Dataset ;
   sh:property [
-    sh:path dct:title ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1
+    sh:path dct:title ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ; sh:maxCount 1
   ] ;
   sh:property [
-    sh:path dct:description ; sh:datatype xsd:string ; sh:minCount 1
+    sh:path dct:description ;
+    sh:datatype xsd:string ;
+    sh:minCount 1
   ] ;
   sh:property [
     sh:path dct:creator ;
@@ -25,53 +29,94 @@
     sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] )
   ] ;
   sh:property [
-    sh:path dct:license ; sh:nodeKind sh:IRI ; sh:minCount 1 ; sh:maxCount 1
+    sh:path dct:issued ;
+    sh:datatype xsd:date ;
+    sh:minCount 1 ; sh:maxCount 1
   ] ;
   sh:property [
-    sh:path dct:issued ; sh:datatype xsd:date ; sh:minCount 1 ; sh:maxCount 1
+    sh:path dct:license ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ; sh:maxCount 1
   ] ;
   sh:property [
-    sh:path dcat:distribution ; sh:nodeKind sh:IRI ; sh:minCount 1
+    sh:path dct:language ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ; sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path dct:spatial ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ; sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path dcat:accessURL ; 
+    sh:nodeKind sh:IRI ; 
+    sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path dcat:distribution ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 2
   ] .
 
 ########################################
-# Distribution – Original (Kaggle CSV) #
+# Base Distribution shape
 ########################################
-:OriginalDistributionShape a sh:NodeShape ;
+:DistributionShape a sh:NodeShape ;
   sh:targetClass dcat:Distribution ;
   sh:property [
     sh:path dct:title ; sh:datatype xsd:string ; sh:minCount 1
   ] ;
   sh:property [
+    sh:path dct:description ; sh:datatype xsd:string ; sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path dcat:accessURL ; sh:nodeKind sh:IRI ; sh:minCount 1
+  ] ;
+  sh:property [
     sh:path dcat:mediaType ; sh:datatype xsd:string ; sh:minCount 1
   ] ;
   sh:property [
-    sh:path dcat:downloadURL ; sh:nodeKind sh:IRI ; sh:minCount 1
+    sh:path dct:format ; sh:datatype xsd:string ; sh:minCount 1
   ] ;
+  sh:property [
+    sh:path dct:license ; sh:nodeKind sh:IRI ; sh:minCount 1
+  ] .
+
+########################################
+# Kaggle Distribution extends base
+########################################
+:KaggleDistributionShape a sh:NodeShape ;
+  sh:node :DistributionShape ;
   sh:property [
     sh:path prov:wasDerivedFrom ; sh:nodeKind sh:IRI ; sh:minCount 1
   ] ;
   sh:property [
-    sh:path dct:license ; sh:nodeKind sh:IRI
+    sh:path dct:publisher ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] )
   ] .
 
 ########################################
-# Distribution – RDF (FAIRified)       #
+# RDF Distribution extends base
 ########################################
 :RDFDistributionShape a sh:NodeShape ;
-  sh:targetClass dcat:Distribution ;
-  sh:property [
-    sh:path dct:title ; sh:datatype xsd:string ; sh:minCount 1
-  ] ;
-  sh:property [
-    sh:path dcat:mediaType ; sh:datatype xsd:string ; sh:minCount 1
-  ] ;
-  sh:property [
-    sh:path dcat:downloadURL ; sh:nodeKind sh:IRI
-  ] ;
+  sh:node :DistributionShape ;
   sh:property [
     sh:path dct:conformsTo ; sh:nodeKind sh:IRI ; sh:minCount 1
   ] ;
   sh:property [
-    sh:path dct:issued ; sh:datatype xsd:date
+    sh:path dct:issued ; sh:datatype xsd:date ; sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path dct:source ; sh:nodeKind sh:IRI ; sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path dct:creator ;
+    sh:or ( [ sh:nodeKind sh:IRI ] [ sh:datatype xsd:string ] ) ;
+    sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path dcat:downloadURL ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1
   ] .
